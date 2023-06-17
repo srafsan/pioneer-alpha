@@ -16,6 +16,11 @@ const SellEasilyBanner = () => {
         <div className="relative">
           <img src="https://i.ibb.co/pzBCsRz/Mask-Group.png" alt="" />
           <img
+            className="absolute top-32 left-28"
+            src="https://i.ibb.co/34t4sq5/Rectangle-17.png"
+            alt=""
+          />
+          <img
             className="absolute top-24 right-36"
             src="https://i.ibb.co/98466HC/image-49-1.png"
             alt=""
