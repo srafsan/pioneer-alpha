@@ -1,4 +1,5 @@
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const listItems = (
@@ -46,9 +47,9 @@ const Navbar = () => {
             {listItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">
+        <Link className="btn btn-ghost normal-case text-xl">
           <img src="https://i.ibb.co/fd28Xp9/Logo.png" alt="" />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{listItems}</ul>

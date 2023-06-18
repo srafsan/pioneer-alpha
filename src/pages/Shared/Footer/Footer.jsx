@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook, BsGlobe2, BsInstagram, BsPinterest } from "react-icons/bs";
 
@@ -7,55 +8,55 @@ const Footer = () => {
       <footer className="footer p-10 bg-[#0e4b80] text-white px-[170px] pt-[64px]">
         <div>
           <span className="footer-title text-xl mb-8">Shop</span>
-          <a className="link link-hover">Gift Cards</a>
-          <a className="link link-hover">SnipShop Blog</a>
+          <Link className="link link-hover">Gift Cards</Link>
+          <Link className="link link-hover">SnipShop Blog</Link>
         </div>
         <div>
           <span className="footer-title text-xl mb-8">Sell</span>
-          <a className="link link-hover">Sell on SnipShop</a>
-          <a className="link link-hover">Terms</a>
-          <a className="link link-hover">Forums</a>
-          <a className="link link-hover">Affiliates</a>
+          <Link className="link link-hover">Sell on SnipShop</Link>
+          <Link className="link link-hover">Terms</Link>
+          <Link className="link link-hover">Forums</Link>
+          <Link className="link link-hover">Affiliates</Link>
         </div>
         <div>
           <span className="footer-title text-xl mb-8">About</span>
-          <a className="link link-hover">SnipShop, Inc.</a>
-          <a className="link link-hover">Policies</a>
-          <a className="link link-hover">Investors</a>
-          <a className="link link-hover">Careers</a>
-          <a className="link link-hover">Press</a>
-          <a className="link link-hover">Impact</a>
+          <Link className="link link-hover">SnipShop, Inc.</Link>
+          <Link className="link link-hover">Policies</Link>
+          <Link className="link link-hover">Investors</Link>
+          <Link className="link link-hover">Careers</Link>
+          <Link className="link link-hover">Press</Link>
+          <Link className="link link-hover">Impact</Link>
         </div>
         <div>
           <span className="footer-title text-xl mb-8">Help</span>
-          <a className="link link-hover">Help Center</a>
-          <a className="link link-hover">Trust & Safety</a>
-          <a className="link link-hover">Privacy Settings</a>
-          <a className="link link-hover">
+          <Link className="link link-hover">Help Center</Link>
+          <Link className="link link-hover">Trust & Safety</Link>
+          <Link className="link link-hover">Privacy Settings</Link>
+          <Link className="link link-hover">
             <button className="flex gap-1 mt-7 btn btn-outline btn-sm rounded-full text-white">
               <img src="https://i.ibb.co/xMvMtFd/Group-3.png" alt="" />
               Download the SnipShop App
             </button>
-          </a>
-          <a className="link link-hover mt-5">
+          </Link>
+          <Link className="link link-hover mt-5">
             <div className="grid grid-flow-col gap-4">
-              <a>
+              <Link>
                 <BsInstagram size="2em" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <BsFacebook size="2em" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <AiFillTwitterCircle size="2em" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <BsGlobe2 size="2em" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <BsPinterest size="2em" />
-              </a>
+              </Link>
             </div>
-          </a>
+          </Link>
         </div>
       </footer>
       <footer className="footer px-[170px] py-4 bg-[#232347] text-white border-base-300">
