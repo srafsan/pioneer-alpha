@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductsContext } from "../../Providers/ProductsProvider";
 
 const Card2 = ({ product }) => {
-  const { thumbnail, category, title, description, price } = product;
+  const { id, thumbnail, category, title, description, price } = product;
+  const { onAdd } = useContext(ProductsContext);
+
+  const handleOrder = (product) => {
+    onAdd(product);
+  };
 
   return (
     <div className="card w-96 h-[650px] bg-base-100 shadow-xl">
@@ -17,7 +23,10 @@ const Card2 = ({ product }) => {
         <p className="mt-3 text-center">{description}</p>
         <h3 className="text-[#0E4B80] text-lg mt-8">${price} USD</h3>
         <div className="card-actions justify-end mt-[70px]">
-          <button className="btn bg-[#001439] text-white rounded-full w-[200px]">
+          <button
+            onClick={() => handleOrder(product)}
+            className="btn bg-[#001439] text-white rounded-full w-[200px]"
+          >
             Order Now
           </button>
         </div>

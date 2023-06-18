@@ -31,8 +31,6 @@ const FeaturedProducts = () => {
           slidesPerView={3}
           navigation
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
