@@ -5,7 +5,7 @@ import { ProductsContext } from "../../../Providers/ProductsProvider";
 
 const Navbar = () => {
   const { ordered } = useContext(ProductsContext);
-  console.log("Navbar", ordered);
+
   const listItems = (
     <>
       <li>

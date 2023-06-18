@@ -5,6 +5,7 @@ import router from "./Routes/Routes.jsx";
 
 import "./index.css";
 import ProductsProvider from "./Providers/ProductsProvider.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
