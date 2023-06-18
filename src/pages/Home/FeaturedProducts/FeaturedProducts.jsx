@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // Import Swiper React components
 import { A11y, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,15 +8,10 @@ import "swiper/css/navigation";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Card2 from "../../../components/Card2/Card2";
 
-const FeaturedProducts = () => {
-  const [products, setProducts] = useState([]);
+import { ProductsContext } from "../../../Providers/ProductsProvider";
 
-  useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data.products));
-    // .then((data) => console.log(data));
-  }, []);
+const FeaturedProducts = () => {
+  const { products } = useContext(ProductsContext);
 
   return (
     <div className="py-24">
