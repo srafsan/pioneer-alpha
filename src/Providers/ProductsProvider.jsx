@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export const ProductsContext = createContext(null);
 
@@ -41,7 +42,14 @@ const ProductsProvider = ({ children }) => {
       }
 
       const newProduct = await response.json();
-      console.log("Product added successfully:");
+
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Order added successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       // Perform any additional actions after adding the product
     } catch (error) {
       console.error("Error adding product:", error);

@@ -9,7 +9,6 @@ const Card2 = ({ product }) => {
   );
 
   const handleOrder = (product) => {
-    console.log("Added", product.id);
     onAdd(product);
     setIsDisabled(true);
   };
