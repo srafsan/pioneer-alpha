@@ -41,7 +41,7 @@ const ProductsProvider = ({ children }) => {
       }
 
       const newProduct = await response.json();
-      console.log("Product added successfully:", newProduct);
+      console.log("Product added successfully:");
       // Perform any additional actions after adding the product
     } catch (error) {
       console.error("Error adding product:", error);
@@ -50,23 +50,21 @@ const ProductsProvider = ({ children }) => {
   };
 
   const onDelete = async (id) => {
-    await fetch(`https://dummyjson.com/products/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (res.status !== 200) {
-          return;
-        } else {
-          setOrdered(
-            ordered.filter((order) => {
-              return order.id !== id;
-            })
-          );
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      const response = await fetch(`http://localhost:5000/products/${id}`, {
+        method: "DELETE",
       });
+
+      if (response.status === 200) {
+        setOrdered((prevOrdered) =>
+          prevOrdered.filter((order) => order.id !== id)
+        );
+      } else {
+        console.log("Failed to delete item.");
+      }
+    } catch (error) {
+      console.log("Error occurred during deletion:", error);
+    }
   };
 
   const productsInfo = {
