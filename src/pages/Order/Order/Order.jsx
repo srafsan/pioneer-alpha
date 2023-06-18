@@ -1,8 +1,13 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "../../../Providers/ProductsProvider";
 
 const Order = () => {
-  const { ordered } = useContext(ProductsContext);
+  const { ordered, onDelete } = useContext(ProductsContext);
+
+  const handleDelete = (id) => {
+    console.log("delete", id);
+    onDelete(id);
+  };
 
   return (
     <div className="min-h-screen  mt-14">
@@ -21,7 +26,7 @@ const Order = () => {
             </tr>
           </thead>
           <tbody>
-            {ordered.map((order, index) => (
+            {ordered?.map((order, index) => (
               <tr key={order.id}>
                 <th>{index + 1}</th>
                 <td>
@@ -46,7 +51,12 @@ const Order = () => {
                   <button className="btn btn-warning btn-xs">Update</button>
                 </th>
                 <th>
-                  <button className="btn btn-error btn-xs">Delete</button>
+                  <button
+                    onClick={() => handleDelete(order.id)}
+                    className="btn btn-error btn-xs"
+                  >
+                    Delete
+                  </button>
                 </th>
               </tr>
             ))}

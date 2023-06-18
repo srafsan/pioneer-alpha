@@ -5,6 +5,7 @@ import { ProductsContext } from "../../../Providers/ProductsProvider";
 
 const Navbar = () => {
   const { ordered } = useContext(ProductsContext);
+  console.log("Navbar", ordered);
   const listItems = (
     <>
       <li>
@@ -25,7 +26,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#1E66FF] sticky top-0">
+    <div className="navbar bg-[#1E66FF] sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -51,7 +52,7 @@ const Navbar = () => {
             {listItems}
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img src="https://i.ibb.co/fd28Xp9/Logo.png" alt="" />
         </Link>
       </div>
