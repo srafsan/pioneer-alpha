@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ProductsContext } from "../../../Providers/ProductsProvider";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const { ordered } = useContext(ProductsContext);
 
   const listItems = (
@@ -24,6 +26,10 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogOut = () => {
+    logOut();
+  };
 
   return (
     <div className="navbar bg-[#1E66FF] sticky top-0 z-50">
@@ -60,23 +66,41 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{listItems}</ul>
       </div>
       <div className="navbar-end gap-4">
-        <div className="flex gap-1 text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+        {user?.photoURL && user?.email && (
+          <div
+            className="mr-2 tooltip tooltip-left"
+            data-tip={`${user.displayName}`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+            <img
+              src={user?.photoURL}
+              style={{ height: "40px", width: "40px", borderRadius: "50%" }}
+              alt=""
             />
-          </svg>
-          Account
-        </div>
+          </div>
+        )}
+        {user ? (
+          <button className="btn btn-warning btn-xs" onClick={handleLogOut}>
+            Logout
+          </button>
+        ) : (
+          <Link to="/login" className="btn btn-ghost flex gap-1 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
+            </svg>
+            Account
+          </Link>
+        )}
         <div className="lg:flex gap-1 text-white hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +139,7 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
-        <div className="text-white">
+        <div className="text-white hidden lg:block">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
