@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const OrderRow = ({ order, onDelete, onUpdate, index }) => {
   const [amount, setAmount] = useState(order.amount);
@@ -49,22 +50,27 @@ const OrderRow = ({ order, onDelete, onUpdate, index }) => {
         <td>{order.description}</td>
         <td>{order.price}</td>
         <td>{order.amount}</td>
-        <th>
+        <td>
+          <Link to={`/payment/${order.id}`} className="btn btn-warning btn-xs">
+            Pay
+          </Link>
+        </td>
+        <td>
           <button
             onClick={() => openModal(order.id)}
             className="btn btn-warning btn-xs"
           >
             Update
           </button>
-        </th>
-        <th>
+        </td>
+        <td>
           <button
             onClick={() => handleDelete(order.id)}
             className="btn btn-error btn-xs"
           >
             Delete
           </button>
-        </th>
+        </td>
       </tr>
       {/* MODAL */}
       <dialog

@@ -18,6 +18,7 @@ const Order = () => {
               <th>Job</th>
               <th>Price</th>
               <th>Amount</th>
+              <th>Pay</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>

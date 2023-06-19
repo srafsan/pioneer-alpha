@@ -3,7 +3,7 @@ import { ProductsContext } from "../../../Providers/ProductsProvider";
 
 // Import Swiper React components
 import { A11y, Navigation, Scrollbar } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -30,16 +30,6 @@ const ShopByCategory = () => {
     motorcycle,
     lighting,
   } = useContext(ProductsContext);
-
-  const swiper = useSwiper();
-
-  const handleSlidePrev = () => {
-    swiper.slidePrev();
-  };
-
-  const handleSlideNext = () => {
-    swiper.slideNext();
-  };
 
   return (
     <div className="py-[90px]">
@@ -188,14 +178,6 @@ const ShopByCategory = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div>
-        <button className="btn btn-primary" onClick={handleSlidePrev}>
-          Prev
-        </button>
-        <button className="btn btn-primary" onClick={handleSlideNext}>
-          Next
-        </button>
-      </div>
     </div>
   );
 };
