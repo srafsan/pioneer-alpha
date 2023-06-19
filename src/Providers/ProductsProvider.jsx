@@ -10,8 +10,37 @@ const ProductsProvider = ({ children }) => {
   const [laptops, setLaptops] = useState([]);
   const [furniture, setFurniture] = useState([]);
   const [watches, setWatches] = useState([]);
+  //------------------------
+  const [smartPhones, setSmartPhones] = useState([]);
+  const [fragrance, setFragrance] = useState([]);
+  const [skincare, setSkincare] = useState([]);
+  const [groceries, setGroceries] = useState([]);
+  const [homeDecoration, setHomeDecoration] = useState([]);
+  const [tops, setTops] = useState([]);
+  const [womenDresses, setWomenDresses] = useState([]);
+  const [womenShoes, setWomenShoes] = useState([]);
+  const [womenWatches, setWomenWatches] = useState([]);
+  const [womenBags, setWomenBags] = useState([]);
+  const [jewellery, setJewellery] = useState([]);
+  const [sunglasses, setSunglasses] = useState([]);
+  const [motorcycle, setMotorcycle] = useState([]);
+  const [lighting, setLighting] = useState([]);
 
   useEffect(() => {
+    fetchSmartPhones();
+    fetchFragrance();
+    fetchSkincare();
+    fetchGroceries();
+    fetchHomeDecoration();
+    fetchTops();
+    fetchWomenDresses();
+    fetchWomenShoes();
+    fetchWomenWatches();
+    fetchWomenBags();
+    fetchJewellery();
+    fetchSunglasses();
+    fetchMotorcycle();
+    fetchLighting();
     fetchProducts();
     fetchMenShirt();
     fetchLaptops();
@@ -22,6 +51,90 @@ const ProductsProvider = ({ children }) => {
   useEffect(() => {
     fetchOrders();
   }, [ordered]);
+
+  const fetchSmartPhones = async () => {
+    await fetch("https://dummyjson.com/products/category/smartphones")
+      .then((res) => res.json())
+      .then((data) => setSmartPhones(data.products));
+  };
+
+  const fetchFragrance = async () => {
+    await fetch("https://dummyjson.com/products/category/fragrances")
+      .then((res) => res.json())
+      .then((data) => setFragrance(data.products));
+  };
+
+  const fetchSkincare = async () => {
+    await fetch("https://dummyjson.com/products/category/skincare")
+      .then((res) => res.json())
+      .then((data) => setSkincare(data.products));
+  };
+
+  const fetchGroceries = async () => {
+    await fetch("https://dummyjson.com/products/category/groceries")
+      .then((res) => res.json())
+      .then((data) => setGroceries(data.products));
+  };
+
+  const fetchHomeDecoration = async () => {
+    await fetch("https://dummyjson.com/products/category/home-decoration")
+      .then((res) => res.json())
+      .then((data) => setHomeDecoration(data.products));
+  };
+
+  const fetchTops = async () => {
+    await fetch("https://dummyjson.com/products/category/tops")
+      .then((res) => res.json())
+      .then((data) => setTops(data.products));
+  };
+
+  const fetchWomenDresses = async () => {
+    await fetch("https://dummyjson.com/products/category/womens-dresses")
+      .then((res) => res.json())
+      .then((data) => setWomenDresses(data.products));
+  };
+
+  const fetchWomenShoes = async () => {
+    await fetch("https://dummyjson.com/products/category/womens-shoes")
+      .then((res) => res.json())
+      .then((data) => setWomenShoes(data.products));
+  };
+
+  const fetchWomenWatches = async () => {
+    await fetch("https://dummyjson.com/products/category/womens-watches")
+      .then((res) => res.json())
+      .then((data) => setWomenWatches(data.products));
+  };
+
+  const fetchWomenBags = async () => {
+    await fetch("https://dummyjson.com/products/category/womens-bags")
+      .then((res) => res.json())
+      .then((data) => setWomenBags(data.products));
+  };
+
+  const fetchJewellery = async () => {
+    await fetch("https://dummyjson.com/products/category/womens-jewellery")
+      .then((res) => res.json())
+      .then((data) => setJewellery(data.products));
+  };
+
+  const fetchSunglasses = async () => {
+    await fetch("https://dummyjson.com/products/category/sunglasses")
+      .then((res) => res.json())
+      .then((data) => setSunglasses(data.products));
+  };
+
+  const fetchMotorcycle = async () => {
+    await fetch("https://dummyjson.com/products/category/motorcycle")
+      .then((res) => res.json())
+      .then((data) => setMotorcycle(data.products));
+  };
+
+  const fetchLighting = async () => {
+    await fetch("https://dummyjson.com/products/category/lighting")
+      .then((res) => res.json())
+      .then((data) => setLighting(data.products));
+  };
 
   const fetchMenShirt = async () => {
     await fetch("https://dummyjson.com/products/category/mens-shirts")
@@ -117,6 +230,20 @@ const ProductsProvider = ({ children }) => {
     laptops,
     furniture,
     watches,
+    smartPhones,
+    fragrance,
+    skincare,
+    groceries,
+    homeDecoration,
+    tops,
+    womenDresses,
+    womenShoes,
+    womenWatches,
+    womenBags,
+    jewellery,
+    sunglasses,
+    motorcycle,
+    lighting,
   };
 
   return (

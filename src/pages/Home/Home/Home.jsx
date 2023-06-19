@@ -5,12 +5,14 @@ import SellEasilyBanner from "../SellEasilyBanner/SellEasilyBanner";
 import PopularBrands from "../PopularBrands/PopularBrands";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 import TrendingProducts from "../TrendingProducts/TrendingProducts";
+import ShopByCategory from "../ShopByCategory/ShopByCategory";
 
 const Home = () => {
   return (
     <div>
       <Banner />
       <TrendingProducts />
+      <ShopByCategory />
       <FeaturedProducts />
       <PopularBrands />
       <SellEasilyBanner />
