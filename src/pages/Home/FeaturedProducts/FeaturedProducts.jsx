@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProductsContext } from "../../../Providers/ProductsProvider";
+import { Link } from "react-router-dom";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Card2 from "../../../components/Card2/Card2";
@@ -19,9 +20,12 @@ const FeaturedProducts = () => {
         <h1 className="text-4xl text-center font-bold">
           Featured Products For <br /> Pre-Order
         </h1>
-        <button className="mt-10 btn btn-outline absolute right-16">
+        <Link
+          to="/all-products"
+          className="mt-10 btn btn-outline absolute right-16"
+        >
           Discover our Products <AiOutlineArrowRight />
-        </button>
+        </Link>
       </div>
       <div className="mt-16">
         <Swiper
