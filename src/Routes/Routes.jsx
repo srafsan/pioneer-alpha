@@ -7,6 +7,7 @@ import Error from "../Error/Error";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PaymentForm from "../components/PaymentForm/PaymentForm";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/payment/:id",
-        element: <PaymentForm />,
+        element: (
+          <PrivateRoute>
+            <PaymentForm />
+          </PrivateRoute>
+        ),
       },
     ],
   },

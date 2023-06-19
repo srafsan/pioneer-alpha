@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 import { AuthContext } from "../../../Providers/AuthProvider";
 
@@ -39,7 +40,7 @@ const Login = () => {
         setError("");
         console.log(loggedUser);
         setTimeout(function () {
-          navigate(from, { replace: true });
+          navigate("/");
         }, 1000);
       })
       .catch((error) => {
@@ -88,6 +89,15 @@ const Login = () => {
             </button>
             <p className="mt-3 text-error">{error}</p>
           </form>
+          <button
+            onClick={() => {
+              signIn("testUser@gmail.com", "Te$t123456");
+              navigate("/");
+            }}
+            className="bg-black w-full rounded-xl text-white py-2 hover:scale-105 duration-300"
+          >
+            Demo User
+          </button>
 
           <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
             <hr className="border-gray-400" />
@@ -127,6 +137,7 @@ const Login = () => {
           />
         </div>
       </div>
+      <Toaster />
     </section>
   );
 };

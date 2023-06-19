@@ -63,18 +63,55 @@ const PaymentForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex items-center justify-center min-h-screen"
-    >
-      <h1>Payment for order: {orderId.id}</h1>
-      <div className="w-1/4">
-        <CardElement />
+    <div>
+      <div className="text-center">
+        <h1 className="text-4xl mt-36">Payment for order: {orderId.id}</h1>
+        <button
+          className="btn mt-5"
+          onClick={() => window.my_modal_5.showModal()}
+        >
+          Demo Card Infomation
+        </button>
+        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+          <form method="dialog" className="modal-box">
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4 text-left">
+              <p className="text-2xl mt-5">
+                Use Card Info as:{" "}
+                <span className="text-red-600 font-bold">4242424242424242</span>
+              </p>
+              <p className="text-xl mt-2">
+                Use Month & Year as:{" "}
+                <span className="text-red-600 font-bold">12</span> &
+                <span className="text-red-600 font-bold">42</span> respectfully
+              </p>
+              <p className="text-xl mt-2">
+                Use CVC as: <span className="text-red-600 font-bold">123</span>
+              </p>
+              <p className="text-xl mt-2">
+                Use ZIP as:{" "}
+                <span className="text-red-600 font-bold">12345</span>
+              </p>
+            </p>
+            <div className="modal-action">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </div>
+          </form>
+        </dialog>
       </div>
-      <button className="btn btn-warning btn-xs ms-7" type="submit">
-        Pay
-      </button>
-    </form>
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center justify-center min-h-screen mt-[-250px]"
+      >
+        <div className="w-1/4">
+          <CardElement />
+        </div>
+        <button className="btn btn-warning btn-xs ms-7" type="submit">
+          Pay
+        </button>
+      </form>
+    </div>
   );
 };
 
