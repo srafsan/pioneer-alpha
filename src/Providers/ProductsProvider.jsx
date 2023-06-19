@@ -206,10 +206,10 @@ const ProductsProvider = ({ children }) => {
     }
   };
 
-  const onUpdate = async (id, updatedProduct) => {
+  const onUpdate = async (_id, updatedProduct) => {
     try {
       const response = await fetch(
-        `https://pioneer-alpha-server.vercel.app/products/${id}`,
+        `https://pioneer-alpha-server.vercel.app/products/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -241,6 +241,41 @@ const ProductsProvider = ({ children }) => {
   };
 
   const onDelete = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await fetch(
+            `https://pioneer-alpha-server.vercel.app/products/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
+
+          if (response.status === 200) {
+            setOrdered((prevOrdered) =>
+              prevOrdered.filter((order) => order._id !== id)
+            );
+          } else {
+            console.log("Failed to delete item.");
+          }
+        } catch (error) {
+          console.log("Error occurred during deletion:", error);
+        }
+
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  };
+
+  const onDeleteImmediate = async (id) => {
     try {
       const response = await fetch(
         `https://pioneer-alpha-server.vercel.app/products/${id}`,
@@ -251,7 +286,7 @@ const ProductsProvider = ({ children }) => {
 
       if (response.status === 200) {
         setOrdered((prevOrdered) =>
-          prevOrdered.filter((order) => order.id !== id)
+          prevOrdered.filter((order) => order._id !== id)
         );
       } else {
         console.log("Failed to delete item.");
@@ -267,6 +302,7 @@ const ProductsProvider = ({ children }) => {
     setOrdered,
     onAdd,
     onDelete,
+    onDeleteImmediate,
     onUpdate,
     menShirt,
     laptops,

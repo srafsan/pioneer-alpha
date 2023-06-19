@@ -9,17 +9,16 @@ const OrderRow = ({ order, onDelete, onUpdate, index }) => {
     window[modalId]?.showModal();
   };
 
-  const handleUpdate = (id) => {
+  const handleUpdate = (_id) => {
     const updatedProduct = {
       ...order,
       amount: parseInt(amount),
     };
 
-    onUpdate(id, updatedProduct);
+    onUpdate(_id, updatedProduct);
   };
 
   const handleDelete = (id) => {
-    console.log("delete", id);
     onDelete(id);
   };
 
@@ -51,7 +50,7 @@ const OrderRow = ({ order, onDelete, onUpdate, index }) => {
         <td>{order.price}</td>
         <td>{order.amount}</td>
         <td>
-          <Link to={`/payment/${order.id}`} className="btn btn-warning btn-xs">
+          <Link to={`/payment/${order._id}`} className="btn btn-warning btn-xs">
             Pay
           </Link>
         </td>
@@ -65,7 +64,7 @@ const OrderRow = ({ order, onDelete, onUpdate, index }) => {
         </td>
         <td>
           <button
-            onClick={() => handleDelete(order.id)}
+            onClick={() => handleDelete(order._id)}
             className="btn btn-error btn-xs"
           >
             Delete
@@ -93,7 +92,7 @@ const OrderRow = ({ order, onDelete, onUpdate, index }) => {
                 onChange={handleChangeAmount}
               />
               <button
-                onClick={() => handleUpdate(order.id)}
+                onClick={() => handleUpdate(order._id)}
                 className="btn btn-warning"
               >
                 Update

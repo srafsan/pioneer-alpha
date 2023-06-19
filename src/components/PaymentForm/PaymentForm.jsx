@@ -11,7 +11,7 @@ const PaymentForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
-  const { onDelete } = useContext(ProductsContext);
+  const { onDeleteImmediate } = useContext(ProductsContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,7 +48,7 @@ const PaymentForm = () => {
         timer: 1500,
       });
     } else {
-      onDelete(orderId.id);
+      onDeleteImmediate(orderId.id);
       form.reset();
       Swal.fire({
         position: "top-end",
