@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div>
       <div className="bg-gradient-to-br from-blue-300 to-teal-200 flex flex-col items-center text-gray-500">
-        <div className="flex gap-8 max-w-screen-xl">
+        <div className="lg:flex gap-8 max-w-screen-xl hidden">
           <p>Jewelry & Accessories</p>
           <p>Cloths & Shoes</p>
           <p>Home & Living</p>
@@ -17,10 +17,10 @@ const Banner = () => {
       </div>
 
       <div
-        className="hero h-[80vh]"
+        className="hero lg:h-[80vh]"
         style={{ backgroundImage: `url("https://i.ibb.co/XsLvGhw/base.png")` }}
       >
-        <div className="hero-content grid grid-cols-2 gap-3">
+        <div className="hero-content grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div>
             <span className="text-xs uppercase">
               100% Quality, 100% Satisfaction
@@ -44,7 +44,7 @@ const Banner = () => {
           </div>
 
           {/* 2nd COLUMN */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="lg:grid grid-cols-4 gap-4 hidden">
             {/* First Column  */}
             <div className="col-span-3">
               <img

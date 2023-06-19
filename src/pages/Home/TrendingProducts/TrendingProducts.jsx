@@ -65,9 +65,16 @@ const TrendingProducts = () => {
               // install Swiper modules
               modules={[Navigation, Scrollbar, A11y]}
               spaceBetween={100}
-              slidesPerView={4}
               navigation
               scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+              }}
               className="mt-8"
             >
               {furniture?.map((product) => (
@@ -83,9 +90,16 @@ const TrendingProducts = () => {
               // install Swiper modules
               modules={[Navigation, Scrollbar, A11y]}
               spaceBetween={50}
-              slidesPerView={3}
               navigation
               scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+              }}
               className="mt-8"
             >
               {menShirt?.map((product) => (
@@ -101,9 +115,16 @@ const TrendingProducts = () => {
               // install Swiper modules
               modules={[Navigation, Scrollbar, A11y]}
               spaceBetween={50}
-              slidesPerView={3}
               navigation
               scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+              }}
               className="mt-8"
             >
               {laptops?.map((product) => (
@@ -119,9 +140,16 @@ const TrendingProducts = () => {
               // install Swiper modules
               modules={[Navigation, Scrollbar, A11y]}
               spaceBetween={50}
-              slidesPerView={3}
               navigation
               scrollbar={{ draggable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+              }}
               className="mt-8"
             >
               {watches?.map((product) => (

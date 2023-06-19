@@ -10,7 +10,7 @@ const Navbar = () => {
     <>
       <li>
         <div className="form-control">
-          <div className="input-group">
+          <div className="input-group hidden lg:block">
             <input
               type="text"
               placeholder="Search SnipShop.com"
@@ -29,7 +29,7 @@ const Navbar = () => {
     <div className="navbar bg-[#1E66FF] sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -77,7 +77,7 @@ const Navbar = () => {
           </svg>
           Account
         </div>
-        <div className="flex gap-1 text-white">
+        <div className="lg:flex gap-1 text-white hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

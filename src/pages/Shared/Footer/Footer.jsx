@@ -32,13 +32,13 @@ const Footer = () => {
           <Link className="link link-hover">Help Center</Link>
           <Link className="link link-hover">Trust & Safety</Link>
           <Link className="link link-hover">Privacy Settings</Link>
-          <Link className="link link-hover">
+          <Link className="link link-hover ms-[-107px] lg:ms-0">
             <button className="flex gap-1 mt-7 btn btn-outline btn-sm rounded-full text-white">
               <img src="https://i.ibb.co/xMvMtFd/Group-3.png" alt="" />
               Download the SnipShop App
             </button>
           </Link>
-          <Link className="link link-hover mt-5">
+          <div className="link link-hover mt-5">
             <div className="grid grid-flow-col gap-4">
               <Link>
                 <BsInstagram size="2em" />
@@ -56,18 +56,20 @@ const Footer = () => {
                 <BsPinterest size="2em" />
               </Link>
             </div>
-          </Link>
+          </div>
         </div>
       </footer>
-      <footer className="footer px-[170px] py-4 bg-[#232347] text-white border-base-300">
-        <div className="items-center grid-flow-col">
-          <p>© 2021-2023 SnipShop.com</p>
-        </div>
-        <div className="md:place-self-center md:justify-self-end">
-          <div className="grid grid-flow-col gap-4">
-            <p>Terms of Services</p>
-            <p>Privacy</p>
-            <p>Interest based Ads</p>
+      <footer className="px-[170px] py-4 bg-[#232347] text-white border-base-300">
+        <div className="footer ms-[-50px] lg:ms-0">
+          <div className="items-center grid-flow-col">
+            <p className="text-center lg:text-left">© 2021-2023 SnipShop.com</p>
+          </div>
+          <div className="md:place-self-center md:justify-self-end">
+            <div className="grid grid-flow-col gap-4">
+              <p>Terms of Services</p>
+              <p>Privacy</p>
+              <p>Interest based Ads</p>
+            </div>
           </div>
         </div>
       </footer>

@@ -15,7 +15,7 @@ const AllProducts = () => {
   return (
     <div>
       <h1 className="text-5xl uppercase text-center my-16">All Products</h1>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {currentPosts.map((product) => (
           <Card2 key={product.id} product={product} />
         ))}
