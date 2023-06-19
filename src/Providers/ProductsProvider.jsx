@@ -167,7 +167,7 @@ const ProductsProvider = ({ children }) => {
   };
 
   const fetchOrders = async () => {
-    await fetch("http://localhost:5000/products")
+    await fetch("https://pioneer-alpha-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setOrdered(data));
   };
@@ -176,13 +176,16 @@ const ProductsProvider = ({ children }) => {
     try {
       const productWithAmount = { ...product, amount: 1 }; // Add amount property with default value
 
-      const response = await fetch("http://localhost:5000/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(productWithAmount), // Use the updated product object
-      });
+      const response = await fetch(
+        "https://pioneer-alpha-server.vercel.app/products",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productWithAmount), // Use the updated product object
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add the product");
@@ -205,13 +208,16 @@ const ProductsProvider = ({ children }) => {
 
   const onUpdate = async (id, updatedProduct) => {
     try {
-      const response = await fetch(`http://localhost:5000/products/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedProduct),
-      });
+      const response = await fetch(
+        `https://pioneer-alpha-server.vercel.app/products/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedProduct),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update the product");
@@ -236,9 +242,12 @@ const ProductsProvider = ({ children }) => {
 
   const onDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/products/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://pioneer-alpha-server.vercel.app/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (response.status === 200) {
         setOrdered((prevOrdered) =>
