@@ -174,19 +174,19 @@ const ProductsProvider = ({ children }) => {
 
   const onAdd = async (product) => {
     try {
+      const productWithAmount = { ...product, amount: 1 }; // Add amount property with default value
+
       const response = await fetch("http://localhost:5000/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(product),
+        body: JSON.stringify(productWithAmount), // Use the updated product object
       });
 
       if (!response.ok) {
         throw new Error("Failed to add the product");
       }
-
-      const newProduct = await response.json();
 
       Swal.fire({
         position: "center",
@@ -195,9 +195,41 @@ const ProductsProvider = ({ children }) => {
         showConfirmButton: false,
         timer: 1500,
       });
+
       // Perform any additional actions after adding the product
     } catch (error) {
       console.error("Error adding product:", error);
+      // Handle any errors that occurred during the request
+    }
+  };
+
+  const onUpdate = async (id, updatedProduct) => {
+    try {
+      const response = await fetch(`http://localhost:5000/products/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update the product");
+      }
+
+      const updatedProductData = await response.json();
+
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Product updated successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      // Perform any additional actions after updating the product
+    } catch (error) {
+      console.error("Error updating product:", error);
       // Handle any errors that occurred during the request
     }
   };
@@ -222,10 +254,11 @@ const ProductsProvider = ({ children }) => {
 
   const productsInfo = {
     products,
-    onAdd,
     ordered,
     setOrdered,
+    onAdd,
     onDelete,
+    onUpdate,
     menShirt,
     laptops,
     furniture,
