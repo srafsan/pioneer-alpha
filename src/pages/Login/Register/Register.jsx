@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 import toast, { Toaster } from "react-hot-toast";
+import useTitle from "../../../Hooks/useTitle";
 
 const Register = () => {
+  useTitle("Pioneer Alpha | Register");
   const navigate = useNavigate();
   const { setReload, createUser } = useContext(AuthContext);
   const [error, setError] = useState("");

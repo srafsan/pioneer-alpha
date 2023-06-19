@@ -6,8 +6,11 @@ import PopularBrands from "../PopularBrands/PopularBrands";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 import TrendingProducts from "../TrendingProducts/TrendingProducts";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
+import useTitle from "../../../Hooks/useTitle";
 
 const Home = () => {
+  useTitle("Pioneer Alpha | Home");
+
   return (
     <div>
       <Banner />

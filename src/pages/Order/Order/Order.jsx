@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { ProductsContext } from "../../../Providers/ProductsProvider";
 import OrderRow from "./OrderRow";
+import useTitle from "../../../Hooks/useTitle";
 
 const Order = () => {
+  useTitle("Pioneer Alpha | Orders");
   const { ordered, onDelete, onUpdate } = useContext(ProductsContext);
 
   return (

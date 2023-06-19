@@ -3,8 +3,10 @@ import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ProductsContext } from "../../Providers/ProductsProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const PaymentForm = () => {
+  useTitle("Pioneer Alpha | Payment");
   const orderId = useParams();
   const stripe = useStripe();
   const elements = useElements();

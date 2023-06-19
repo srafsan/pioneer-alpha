@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -33,9 +33,12 @@ const Banner = () => {
               Vision of Snipshop for a better outlook.
             </p>
             <div className="flex justify-between items-center mt-[70px]">
-              <button className="btn btn-neutral rounded-[42px] w-[145px]">
+              <Link
+                to="all-products"
+                className="btn btn-neutral rounded-[42px] w-[145px]"
+              >
                 Shop Now
-              </button>
+              </Link>
               <p className="text-gray-600">
                 Starting from <br />{" "}
                 <span className="font-bold text-3xl text-black">$110.0</span>

@@ -5,8 +5,10 @@ import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 import { FcGoogle } from "react-icons/fc";
+import useTitle from "../../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Pioneer Alpha | Login");
   const [error, setError] = useState("");
   const { signIn, signInGoogle } = useContext(AuthContext);
 

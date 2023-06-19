@@ -21,7 +21,7 @@ const Pagination = ({
       <div className="join">
         {pages.map((page, index) => (
           <button
-            key={page.key}
+            key={index}
             className={`join-item btn btn-lg ${
               page === currentPage ? "btn-active" : ""
             }`}
