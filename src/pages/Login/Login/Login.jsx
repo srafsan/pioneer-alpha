@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import useTitle from "../../../Hooks/useTitle";
 
 const Login = () => {
-  useTitle("Pioneer Alpha | Login");
+  useTitle("SnipShop | Login");
   const [error, setError] = useState("");
   const { signIn, signInGoogle } = useContext(AuthContext);
 

@@ -3,7 +3,7 @@ import useTitle from "../Hooks/useTitle";
 
 const Error = () => {
   const { error, status } = useRouteError();
-  useTitle("Pioneer Alpha | Error");
+  useTitle("SnipShop | Error");
 
   return (
     <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">

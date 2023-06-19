@@ -5,7 +5,7 @@ import Pagination from "../../components/Pagination";
 import useTitle from "../../Hooks/useTitle";
 
 const AllProducts = () => {
-  useTitle("Pioneer Alpha | All Products");
+  useTitle("SnipShop | All Products");
   const { products } = useContext(ProductsContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(6);

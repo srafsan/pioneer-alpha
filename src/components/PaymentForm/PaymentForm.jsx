@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 
 const PaymentForm = () => {
-  useTitle("Pioneer Alpha | Payment");
+  useTitle("SnipShop | Payment");
   const orderId = useParams();
   const stripe = useStripe();
   const elements = useElements();

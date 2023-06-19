@@ -9,7 +9,7 @@ import ShopByCategory from "../ShopByCategory/ShopByCategory";
 import useTitle from "../../../Hooks/useTitle";
 
 const Home = () => {
-  useTitle("Pioneer Alpha | Home");
+  useTitle("SnipShop | Home");
 
   return (
     <div>

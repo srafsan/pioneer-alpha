@@ -4,7 +4,7 @@ import OrderRow from "./OrderRow";
 import useTitle from "../../../Hooks/useTitle";
 
 const Order = () => {
-  useTitle("Pioneer Alpha | Orders");
+  useTitle("SnipShop | Orders");
   const { ordered, onDelete, onUpdate } = useContext(ProductsContext);
 
   return (
