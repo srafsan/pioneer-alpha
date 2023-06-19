@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
+import { ProductsContext } from "../../../Providers/ProductsProvider";
+
+import { AiOutlineArrowRight } from "react-icons/ai";
+import Card2 from "../../../components/Card2/Card2";
+
 // Import Swiper React components
 import { A11y, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-
-import { AiOutlineArrowRight } from "react-icons/ai";
-import Card2 from "../../../components/Card2/Card2";
-
-import { ProductsContext } from "../../../Providers/ProductsProvider";
 
 const FeaturedProducts = () => {
   const { products } = useContext(ProductsContext);

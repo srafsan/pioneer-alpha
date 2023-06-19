@@ -6,14 +6,46 @@ export const ProductsContext = createContext(null);
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [ordered, setOrdered] = useState([]);
+  const [menShirt, setMenShirt] = useState([]);
+  const [laptops, setLaptops] = useState([]);
+  const [furniture, setFurniture] = useState([]);
+  const [watches, setWatches] = useState([]);
 
   useEffect(() => {
     fetchProducts();
+    fetchMenShirt();
+    fetchLaptops();
+    fetchFurniture();
+    fetchWatches();
   }, []);
 
   useEffect(() => {
     fetchOrders();
   }, [ordered]);
+
+  const fetchMenShirt = async () => {
+    await fetch("https://dummyjson.com/products/category/mens-shirts")
+      .then((res) => res.json())
+      .then((data) => setMenShirt(data.products));
+  };
+
+  const fetchLaptops = async () => {
+    await fetch("https://dummyjson.com/products/category/laptops")
+      .then((res) => res.json())
+      .then((data) => setLaptops(data.products));
+  };
+
+  const fetchFurniture = async () => {
+    await fetch("https://dummyjson.com/products/category/furniture")
+      .then((res) => res.json())
+      .then((data) => setFurniture(data.products));
+  };
+
+  const fetchWatches = async () => {
+    await fetch("https://dummyjson.com/products/category/mens-watches")
+      .then((res) => res.json())
+      .then((data) => setWatches(data.products));
+  };
 
   const fetchProducts = async () => {
     await fetch("https://dummyjson.com/products")
@@ -81,6 +113,10 @@ const ProductsProvider = ({ children }) => {
     ordered,
     setOrdered,
     onDelete,
+    menShirt,
+    laptops,
+    furniture,
+    watches,
   };
 
   return (
