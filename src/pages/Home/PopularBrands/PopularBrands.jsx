@@ -1,4 +1,5 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const PopularBrands = () => {
   return (
@@ -25,9 +26,9 @@ const PopularBrands = () => {
           <p className="text-lg mt-6">
             Life is hard enough already. Let us <br /> make it a little easier.
           </p>
-          <button className="mt-16 btn btn-outline">
+          <Link to="/all-products" className="mt-16 btn btn-outline">
             See all <AiOutlineArrowRight />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

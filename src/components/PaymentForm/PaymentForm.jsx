@@ -104,7 +104,7 @@ const PaymentForm = () => {
         onSubmit={handleSubmit}
         className="flex items-center justify-center min-h-screen mt-[-250px]"
       >
-        <div className="w-1/4">
+        <div className="w-full lg:w-1/4">
           <CardElement />
         </div>
         <button className="btn btn-warning btn-xs ms-7" type="submit">

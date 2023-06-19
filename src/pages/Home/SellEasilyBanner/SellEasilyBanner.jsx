@@ -1,4 +1,5 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const SellEasilyBanner = () => {
   return (
@@ -9,9 +10,9 @@ const SellEasilyBanner = () => {
           <p className="text-lg mt-6">
             Life is hard enough already. Let us make it a little easier.
           </p>
-          <button className="mt-16 btn btn-outline">
+          <Link to="/all-products" className="mt-16 btn btn-outline">
             See all <AiOutlineArrowRight />
-          </button>
+          </Link>
         </div>
         <div className="relative">
           <img src="https://i.ibb.co/pzBCsRz/Mask-Group.png" alt="" />
